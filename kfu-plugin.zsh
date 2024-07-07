@@ -3,8 +3,8 @@ kfu-dashboard () {
 }
 
 kfu-nodelabel () {
-	for x in $(kubecolor get nodes --no-headers -o name)
-    		echo ${x} && kubecolor get $x -o yaml | yq .metadata.labels && echo ""
+	for x in $(kubectl get nodes --no-headers -o name)
+    		echo ${x} && kubectl get $x -o yaml | yq .metadata.labels && echo ""
 }
 
 kfu-namespace () {
